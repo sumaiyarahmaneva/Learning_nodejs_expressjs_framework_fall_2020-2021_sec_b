@@ -55,5 +55,32 @@ router.post('/edit/:id', (req, res)=>{
 	});
 })
 
+router.get('/delete/:id', (req, res)=>{
+	var user ={
+		id: req.params.id
+	};
+	userModel.getById(user, function(results){
+		console.log(results);
+		res.render('user/delete', {value: results});
+	});
+})
+
+router.post('/delete/:id', (req, res)=>{
+	var user ={
+		id: req.params.id
+	};
+	userModel.delete(user, function(status){
+		if(status)
+		{
+			res.redirect('/home/userlist');	
+		}
+		else
+		{
+			res.redirect('user/delete/:id');
+		}
+		
+	});
+})
+
 
 module.exports = router;

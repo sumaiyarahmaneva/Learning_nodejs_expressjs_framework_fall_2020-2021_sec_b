@@ -38,6 +38,13 @@ module.exports ={
 		db.execute(sql, function(status){
 			callback(status);
 		});
+	},
+	delete: function(user, callback){
+		var sql = "DELETE FROM `user` WHERE id='"+user.id+"'";
+		db.execute(sql, function(status){
+			callback(status);
+		});
+
 	}
 	
 }
