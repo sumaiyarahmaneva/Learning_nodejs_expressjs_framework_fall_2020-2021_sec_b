@@ -31,6 +31,13 @@ module.exports ={
 		db.execute(sql, function(status){
 			callback(status);
 		});
+	},
+	update: function(user, callback){
+		//console.log(user);
+		var sql = "UPDATE `user` SET `username`='"+user.username+"',`password`= '"+user.password+"' ,`type`='"+user.type+"' WHERE id='"+user.id+"'";
+		db.execute(sql, function(status){
+			callback(status);
+		});
 	}
 	
 }
