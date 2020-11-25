@@ -25,6 +25,12 @@ module.exports ={
 			callback(results);
 		});
 
+	},
+	insert: function(user, callback){
+		var sql = "insert into user VALUES ('', '"+user.username+"' , '"+user.password+"' , '"+user.type+"')";
+		db.execute(sql, function(status){
+			callback(status);
+		});
 	}
 	
 }
