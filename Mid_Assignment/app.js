@@ -9,6 +9,7 @@ const logout		= require('./controller/logout');
 const user			= require('./controller/user');
 const app 			= express();
 
+
 //config
 app.set('view engine', 'ejs');
 
@@ -22,6 +23,8 @@ app.use('/login', login);
 app.use('/home', home);
 app.use('/logout', logout);
 app.use('/user', user);
+
+
 
 //route
 app.get('/', (req, res)=>{
