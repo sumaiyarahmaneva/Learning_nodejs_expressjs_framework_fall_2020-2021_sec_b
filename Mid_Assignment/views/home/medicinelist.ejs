@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medicine List Page</title>
+</head>
+<body>
+	<h3>Medicine List</h3>
+
+	<a href="/home">Back</a> |
+	<a href="/logout">logout</a>
+	<br>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>MEDICINE NAME</td>
+			<td>Action</td>
+		</tr>
+
+		<% for(var i=0; i< medicinelist.length; i++ ){ %>
+		<tr>
+			<td><%= medicinelist[i].id %></td>
+			<td><%= medicinelist[i].medicinename %></td>
+			<td>
+				<a href="/user/edit/<%=medicinelist[i].id%>">Edit</a> | 
+				<a href="/user/delete/<%=medicinelist[i].id%>">Delete</a>  
+			</td>
+		</tr>
+		<% } %>
+	</table>
+</body>
+</html>

@@ -19,5 +19,13 @@ router.get('/userlist', (req, res)=>{
 	});
 
 });
+router.get('/medicinelist', (req, res)=>{
+
+	userModel.getAllMedicine(function(results){
+		console.log(results);
+		res.render('home/medicinelist', {medicinelist: results});
+	});
+
+});
 
 module.exports = router;

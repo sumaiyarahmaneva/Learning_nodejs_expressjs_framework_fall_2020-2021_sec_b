@@ -19,8 +19,17 @@ module.exports ={
 		});
 
 	},
+	//customer
 	getAll: function(callback){
 		var sql = "select * from user";
+		db.getResults(sql, function(results){
+			callback(results);
+		});
+
+	},
+	//medicine
+	getAllMedicine: function(callback){
+		var sql = "select * from medicine";
 		db.getResults(sql, function(results){
 			callback(results);
 		});
