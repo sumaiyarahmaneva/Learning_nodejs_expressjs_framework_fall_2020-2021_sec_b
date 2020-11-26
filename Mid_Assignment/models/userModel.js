@@ -74,12 +74,20 @@ module.exports ={
 	},
 	//medicine_delete
 	
-	deleteMedicine: function(user, callback){
+	deleteMedicine: function(medicine, callback){
 		var sql = "DELETE FROM `medicine` WHERE id='"+medicine.id+"'";
 		db.execute(sql, function(status){
 			callback(status);
 		});
 
 	}
+	//medicine_edit
+	editMedicine: function(medicine, callback){
+		//console.log(user);
+		var sql = "UPDATE `medicine` SET `medicinename`='"+medicine.medicinename+"',`type`= '"+medicine.type+"' ,,`price`= '"+medicine.price+"' ,`availability`='"+medicine.availability+"' WHERE id='"+medicine.id+"'";
+		db.execute(sql, function(status){
+			callback(status);
+		});
+	},
 	
 }

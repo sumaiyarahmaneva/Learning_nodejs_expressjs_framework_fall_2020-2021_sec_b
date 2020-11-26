@@ -111,5 +111,36 @@ router.post('/deleteMedicine/:id', (req, res)=>{
 	});
 })
 
+//edit medicine
+router.get('/editMedicine/:id', (req, res)=>{
+
+	var medicine ={
+		id: req.params.id
+	};
+	userModel.getByIdM(medicine, function(results){
+		//console.log(results);
+		res.render('user/editMedicine', {value: results});
+	});
+})
+
+
+router.post('/editMedicine/:id', (req, res)=>{
+
+	var medicine = {
+		id 		: 	req.body.id,
+		medicinename: 	req.body.medicinename,
+		type	: 	req.body.type,
+		price: 	req.body.price,
+		availability: 	req.body.availability
+	};
+	userModel.editMedicine(medicine, function(status){
+		if(status){
+			res.redirect('/home/medicineDetails');
+		}else{
+			res.redirect('user/editMedicine/:id');
+		}
+	});
+})
+
 
 module.exports = router;
