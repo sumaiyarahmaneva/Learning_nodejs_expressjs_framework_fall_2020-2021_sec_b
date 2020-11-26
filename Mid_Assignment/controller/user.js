@@ -82,6 +82,30 @@ router.post('/delete/:id', (req, res)=>{
 		
 	});
 })
+//createmedicine
+router.get('/createMedicine', (req, res)=>{
+	res.render('user/createMedicine'); 
+})
+
+//Createmedicine
+
+router.post('/createMedicine', (req, res)=>{
+
+	var medicine = {
+		medicinename: 	req.body.medicinename,
+		type	: 	req.body.type,
+		price: 	req.body.price,
+		availability: 	req.body.availability
+	};
+
+	userModel.insertMedicine(medicine, function(status){
+		if(status){
+			res.redirect('/home/medicineDetails');
+		}else{
+			res.redirect('user/createMedicine');
+		}
+	});
+})
 
 //delete medicine
 router.get('/deleteMedicine/:id', (req, res)=>{

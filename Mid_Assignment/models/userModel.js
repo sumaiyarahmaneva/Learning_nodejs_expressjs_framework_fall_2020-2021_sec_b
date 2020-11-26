@@ -72,6 +72,13 @@ module.exports ={
 		});
 
 	},
+	//Create_medicine
+	insertMedicine: function(medicine, callback){
+		var sql = "insert into medicine VALUES ('', '"+medicine.medicinename+"' ,'"+medicine.type+"', '"+medicine.price+"' , , '"+medicine.availability+"')";
+		db.execute(sql, function(status){
+			callback(status);
+		});
+	},
 	//medicine_delete
 	
 	deleteMedicine: function(medicine, callback){

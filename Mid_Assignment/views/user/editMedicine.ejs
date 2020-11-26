@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit User</title>
+	<title>Edit Medicine</title>
 </head>
 <body>
 	<form method="post">
 		<fieldset>
-			<legend>Edit User</legend>
+			<legend>Edit Medicine</legend>
 			<table>
 				<tr>
 					<td>Id</td>
-					<td><input type="text" name="uid" value="<%=value[0].id%>" disabled></td>
+					<td><input type="text" name="id" value="<%=value[0].id%>" disabled></td>
 				</tr>
 				<tr>
-					<td>Username</td>
-					<td><input type="text" name="username" value="<%=value[0].username %>"></td>
+					<td>Medicine Name</td>
+					<td><input type="text" name="medicinename" value="<%=value[0].medicinename %>"></td>
 				</tr>
 				<tr>
-					<td>Password</td>
-					<td><input type="password" name="password" value="<%=value[0].password %>"></td>
-				</tr>
-				<tr>
-					<td>User Type</td>
+					<td>Type</td>
 					<td><input type="text" name="type" value="<%=value[0].type %>"></td>
+				</tr>
+				<tr>
+					<td>Price</td>
+					<td><input type="text" name="price" value="<%=value[0].price %>"></td>
+				</tr>
+				<tr>
+					<td>Availability</td>
+					<td><input type="text" name="availability" value="<%=value[0].availability %>"></td>
 				</tr>
 				<tr>
 					<td><input type="hidden" name="id" value="<%=value[0].id%>"></td>
