@@ -104,5 +104,13 @@ module.exports ={
 			callback(results);
 		});
 	}
+	//customercartlist
+	getAllCustomerCartList: function(callback){
+		var sql = "select * from user";
+		db.getResults(sql, function(results){
+			callback(results);
+		});
+
+	},
 	
 }
