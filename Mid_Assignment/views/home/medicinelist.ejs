@@ -14,17 +14,12 @@
 		<tr>
 			<td>ID</td>
 			<td>MEDICINE NAME</td>
-			<td>ACTION</td>
 		</tr>
 
 		<% for(var i=0; i< medicinelist.length; i++ ){ %>
 		<tr>
 			<td><%= medicinelist[i].id %></td>
 			<td><%= medicinelist[i].medicinename %></td>
-			<td>
-				<a href="/user/edit/<%=medicinelist[i].id%>">Edit</a> | 
-				<a href="/user/delete/<%=medicinelist[i].id%>">Delete</a>  
-			</td>
 		</tr>
 		<% } %>
 	</table>

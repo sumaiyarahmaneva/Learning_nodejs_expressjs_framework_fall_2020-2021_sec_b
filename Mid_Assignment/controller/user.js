@@ -55,6 +55,7 @@ router.post('/edit/:id', (req, res)=>{
 	});
 })
 
+//delete customer
 router.get('/delete/:id', (req, res)=>{
 	var user ={
 		id: req.params.id
@@ -77,6 +78,34 @@ router.post('/delete/:id', (req, res)=>{
 		else
 		{
 			res.redirect('user/delete/:id');
+		}
+		
+	});
+})
+
+//delete medicine
+router.get('/deleteMedicine/:id', (req, res)=>{
+	var medicine ={
+		id: req.params.id
+	};
+	userModel.getByIdM(medicine, function(results){
+		console.log(results);
+		res.render('user/deleteMedicine', {value: results});
+	});
+})
+
+router.post('/deleteMedicine/:id', (req, res)=>{
+	var medicine ={
+		id: req.params.id
+	};
+	userModel.deleteMedicine(medicine, function(status){
+		if(status)
+		{
+			res.redirect('/home/medicineDetails');	
+		}
+		else
+		{
+			res.redirect('user/deleteMedicine/:id');
 		}
 		
 	});

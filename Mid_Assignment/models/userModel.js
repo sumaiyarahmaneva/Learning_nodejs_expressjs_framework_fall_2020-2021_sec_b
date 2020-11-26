@@ -19,6 +19,13 @@ module.exports ={
 		});
 
 	},
+	getByIdM: function(medicine, callback){
+		var sql = "select * from medicine where id='"+medicine.id+"'";
+		db.getResults(sql, function(results){
+			callback(results);
+		});
+
+	},
 	//customer
 	getAll: function(callback){
 		var sql = "select * from user";
@@ -44,6 +51,7 @@ module.exports ={
 		});
 
 	},
+	//user_insert_update_delete
 	insert: function(user, callback){
 		var sql = "insert into user VALUES ('', '"+user.username+"' , '"+user.password+"' , '"+user.type+"')";
 		db.execute(sql, function(status){
@@ -59,6 +67,15 @@ module.exports ={
 	},
 	delete: function(user, callback){
 		var sql = "DELETE FROM `user` WHERE id='"+user.id+"'";
+		db.execute(sql, function(status){
+			callback(status);
+		});
+
+	},
+	//medicine_delete
+	
+	deleteMedicine: function(user, callback){
+		var sql = "DELETE FROM `medicine` WHERE id='"+medicine.id+"'";
 		db.execute(sql, function(status){
 			callback(status);
 		});

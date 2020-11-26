@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete Medicine</title>
+</head>
+<body>
+	<form method="post">
+		<fieldset>
+			<legend>Delete Medicine</legend>
+			<table>
+				<tr>
+					<td>Medicine Name :</td>
+					<td><%=value[0].medicinename %></td>
+				</tr>
+				<tr>
+					<td>Type :</td>
+					<td><%=value[0].type %></td>
+				</tr>
+				<tr>
+					<td>Price :</td>
+					<td><%=value[0].price %></td>
+				</tr>
+				<tr>
+					<td>Availability :</td>
+					<td><%=value[0].availability %></td>
+				</tr>
+			</table>
+			<div>
+				<h3>Are you sure?</h3>
+				<input type="submit" name="submit" value="Confirm">
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>

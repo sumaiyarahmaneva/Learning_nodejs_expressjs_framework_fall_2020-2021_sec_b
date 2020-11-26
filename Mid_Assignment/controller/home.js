@@ -10,7 +10,7 @@ router.get('/', (req, res)=>{
 		res.redirect('/login');
 	}
 })
-
+//Customerlist
 router.get('/userlist', (req, res)=>{
 
 	userModel.getAll(function(results){
