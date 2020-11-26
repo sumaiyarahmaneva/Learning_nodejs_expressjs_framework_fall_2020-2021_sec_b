@@ -96,5 +96,13 @@ module.exports ={
 			callback(status);
 		});
 	},
+	//searchmedicine
+	ajaxSearchMedicine: function(data,callback){
+		var sql = "select * from medicine where medicinename='"+medicine.medicinename+"'";
+		db.getResults(sql, function(results){
+			console.log(results);
+			callback(results);
+		});
+	}
 	
 }

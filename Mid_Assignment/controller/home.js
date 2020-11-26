@@ -38,4 +38,6 @@ router.get('/medicinedetails', (req, res)=>{
 
 });
 
+
+
 module.exports = router;

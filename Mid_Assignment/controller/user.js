@@ -165,6 +165,39 @@ router.post('/editMedicine/:id', (req, res)=>{
 		}
 	});
 })
+//searchMedicine
+router.get('/searchMedicine', (req, res)=>{
+	res.render('user/searchMedicine'); 
+})
+
+router.get('/AjaxSearchMedicine', (req, res)=>{
+		console.log(data.text);
+		guModel.ajaxSearchGU(data, function(results){
+			var strign=`<table id="view">
+						<tr>
+							<td>Medicine ID</td>
+							<td>Medicine Name</td>
+							<td>Type</td>
+							<td>Price</td>
+							<td>Availability</td>
+						</tr>`;
+			for(i=0; i<results.length ; i++)
+			{
+				strign=strign+"<tr>";
+				strign=strign+"<td>"+results[i].id+"</td>";
+				strign=strign+"<td>"+results[i].medicinename+"</td>";
+				strign=strign+"<td>"+results[i].type+"</td>";
+				strign=strign+"<td>"+results[i].price+"</td>";
+				strign=strign+"<td>"+results[i].availability+"</td>";
+				strign=strign+"</tr>";
+			}
+			strign=strign+`</table>`;
+			console.log(strign);
+			res.status(200).send({ result : strign });
+		});
+	}else{
+		res.redirect('/login');
+	}
 
 
 module.exports = router;
