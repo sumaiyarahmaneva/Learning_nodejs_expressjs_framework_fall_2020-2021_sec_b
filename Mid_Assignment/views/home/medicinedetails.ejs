@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medicine Details Page</title>
+</head>
+<body>
+	<h3>Medicine Details</h3>
+
+	<a href="/home">Back</a> |
+	<a href="/logout">logout</a>
+	<br>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>MEDICINE NAME</td>
+			<td>MEDICINE TYPE</td>
+			<td>PRICE</td>
+			<td>AVAILABILITY</td>
+			<td>Action</td>
+		</tr>
+
+		<% for(var i=0; i< medicinedetails.length; i++ ){ %>
+		<tr>
+			<td><%= medicinedetails[i].id %></td>
+			<td><%= medicinedetails[i].medicinename %></td>
+			<td><%= medicinedetails[i].type %></td>
+			<td><%= medicinedetails[i].price %></td>
+			<td><%= medicinedetails[i].availability %></td>
+			<td>
+				<a href="/user/edit/<%=medicinedetails[i].id%>">Edit</a> | 
+				<a href="/user/delete/<%=medicinedetails[i].id%>">Delete</a>  
+			</td>
+		</tr>
+		<% } %>
+	</table>
+</body>
+</html>

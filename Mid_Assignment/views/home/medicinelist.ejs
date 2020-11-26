@@ -14,9 +14,6 @@
 		<tr>
 			<td>ID</td>
 			<td>MEDICINE NAME</td>
-			<td>MEDICINE TYPE</td>
-			<td>PRICE</td>
-			<td>AVAILABILITY</td>
 			<td>ACTION</td>
 		</tr>
 
@@ -24,9 +21,6 @@
 		<tr>
 			<td><%= medicinelist[i].id %></td>
 			<td><%= medicinelist[i].medicinename %></td>
-			<td><%= medicinelist[i].type %></td>
-			<td><%= medicinelist[i].price %></td>
-			<td><%= medicinelist[i].availability %></td>
 			<td>
 				<a href="/user/edit/<%=medicinelist[i].id%>">Edit</a> | 
 				<a href="/user/delete/<%=medicinelist[i].id%>">Delete</a>  

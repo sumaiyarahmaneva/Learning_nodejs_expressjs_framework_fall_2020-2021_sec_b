@@ -27,7 +27,8 @@ module.exports ={
 		});
 
 	},
-	//medicine
+	
+	//medicinelist
 	getAllMedicine: function(callback){
 		var sql = "select * from medicine";
 		db.getResults(sql, function(results){
@@ -36,7 +37,7 @@ module.exports ={
 
 	},
 	//medicinedetails
-	medicineDetails: function(callback){
+	getAllMedicineDetails: function(callback){
 		var sql = "select * from medicine";
 		db.getResults(sql, function(results){
 			callback(results);
