@@ -19,11 +19,21 @@ router.get('/userlist', (req, res)=>{
 	});
 
 });
+//medicinelist
 router.get('/medicinelist', (req, res)=>{
 
 	userModel.getAllMedicine(function(results){
 		console.log(results);
 		res.render('home/medicinelist', {medicinelist: results});
+	});
+
+});
+//medicinedetails
+router.get('/medicinedetails', (req, res)=>{
+
+	userModel.getAllMedicineDetails(function(results){
+		console.log(results);
+		res.render('home/medicinedetails', {medicinedetails: results});
 	});
 
 });

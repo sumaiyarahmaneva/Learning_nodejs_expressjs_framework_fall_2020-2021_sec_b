@@ -35,6 +35,14 @@ module.exports ={
 		});
 
 	},
+	//medicinedetails
+	medicineDetails: function(callback){
+		var sql = "select * from medicine";
+		db.getResults(sql, function(results){
+			callback(results);
+		});
+
+	},
 	insert: function(user, callback){
 		var sql = "insert into user VALUES ('', '"+user.username+"' , '"+user.password+"' , '"+user.type+"')";
 		db.execute(sql, function(status){
