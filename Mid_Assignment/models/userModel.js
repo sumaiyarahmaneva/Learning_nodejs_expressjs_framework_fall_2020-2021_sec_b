@@ -87,23 +87,7 @@ module.exports ={
 			callback(status);
 		});
 
-	}
-	//medicine_edit
-	editMedicine: function(medicine, callback){
-		//console.log(user);
-		var sql = "UPDATE `medicine` SET `medicinename`='"+medicine.medicinename+"',`type`= '"+medicine.type+"' ,,`price`= '"+medicine.price+"' ,`availability`='"+medicine.availability+"' WHERE id='"+medicine.id+"'";
-		db.execute(sql, function(status){
-			callback(status);
-		});
 	},
-	//searchmedicine
-	ajaxSearchMedicine: function(data,callback){
-		var sql = "select * from medicine where medicinename='"+medicine.medicinename+"'";
-		db.getResults(sql, function(results){
-			console.log(results);
-			callback(results);
-		});
-	}
 	//customercartlist
 	getAllCustomerCartList: function(callback){
 		var sql = "select * from user";
